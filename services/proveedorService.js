@@ -2,8 +2,9 @@ const fs = require("fs");
 const Proveedor = require("../models/proveedores");
 
 const obtenerProveedores = (nombreArchivo) => {
-  //Read del CRUD
   const arrayProveedores = [];
+
+  // Read del CRUD
   let datos = fs.readFileSync(`./data/${nombreArchivo}.csv`, "utf-8");
   datos = datos.replace(/\r/g, "");
   datos = datos.replace(/\n/g, ";");
@@ -22,7 +23,7 @@ const obtenerProveedores = (nombreArchivo) => {
       arrayProveedores.push(proveedor);
     }
   });
-  console.log(arrayProveedores);
+  console.log("Solicitud de proveedores exitosa");
   return arrayProveedores;
 };
 

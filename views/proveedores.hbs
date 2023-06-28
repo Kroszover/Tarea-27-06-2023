@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proveedores</title>
-</head>
-<body>
-    <h1>{{titulo}}</h1>
-</body>
+<html>
+  <head>
+    <title>Listado de Proveedores</title>
+  </head>
+  <body>
+    <h1>Listado de Proveedores</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID Proveedor</th>
+          <th>Nombre Compañía</th>
+          <th>Nombre Contacto</th>
+          <th>Título Contacto</th>
+          <th>Ciudad</th>
+          <th>País</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each proveedores}}
+        <tr>
+          <td>{{this.idProveedor}}</td>
+          <td>{{this.nombreCompania}}</td>
+          <td>{{this.nombreContacto}}</td>
+          <td>{{this.tituloContacto}}</td>
+          <td>{{this.ciudad}}</td>
+          <td>{{this.pais}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
 </html>
